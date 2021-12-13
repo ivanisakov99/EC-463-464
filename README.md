@@ -1,5 +1,5 @@
 # EC-463-464
 Senior Design
 
-* [November Entries](November.md)
-* [December Entries]()
+* [November Entries](Logbooks/November.md)
+* [December Entries](Logbooks/December.md)
