@@ -60,7 +60,7 @@ class Form extends React.Component {
 
                     <div className="field">
                         <input type='text' pattern="[0-9]*" name="time_to_send" className="input" placeholder=" " onChange={ this.onChange } />
-                        <label htmlFor="time_to_send" className="label">Time In Seconds</label>
+                        <label htmlFor="time_to_send" className="label">Time In Minutes</label>
                     </div>
 
                     <div className="button1">
