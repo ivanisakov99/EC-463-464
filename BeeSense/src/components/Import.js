@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-// import {Line} from 'react-chartjs-2';
-// import { Chart as ChartJS, registerables } from 'chart.js';
-// import { Line } from 'react-chartjs-2';
 import DrawGraph from "./DrawGraph";
 
 const Import = () => {
     const [file, setFile] = useState();
     const [headers, setHeaders] = useState([]);
     const [array, setArray] = useState([]);
-    // const [submitted, setSubmitted] = useState(false);
     const [dataset, setDataset] = useState();
     const [currentHeader, setCurrentHeader] = useState('')
 
@@ -46,6 +42,7 @@ const Import = () => {
 
     const handleOnChange = (e) => {
         setFile(e.target.files[0]);
+        console.log(e.target.files[0]);
     };
 
     const csvFileToArray = string => {
@@ -84,41 +81,47 @@ const Import = () => {
             { dataset ?
                 <>
                     <div className="dropdown">
-                        <button className="dropbtn">Dropdown</button>
+                        <button className="dropbtn">Select A Graph</button>
                         <div className="dropdown-content">
-                            {/* <a onClick={() => { setCurrentHeader('Packet') }}>Packet</a>
-                            <a onClick={ () => { setCurrentHeader('Temperature in F') }}>Packet</a> */}
                             { headers.map(header => {
                                 return (
                                     <a key={ header } onClick={ () => { setCurrentHeader(header); } }>{ header }</a>
                                 );
                             })}
-
                         </div>
                     </div>
 
-                    <div>
-                        <DrawGraph
-                            dataset={ dataset }
-                            name={ currentHeader }  
-                        />
-                    </div>
-                    <div>
+                    <DrawGraph
+                        dataset={ dataset }
+                        name={ currentHeader }  
+                    />
+                    
+                    <div className="redo" style={{ marginBottom: '10%', marginLeft:'1%' }}>
                         <button onClick={ () => { setDataset(null) } }>Upload A Different File</button>
                     </div>
                 </>
                 :
-                <form>
+                <form className="fileUpload">
                     <div>
-                        <input
+                        {/* <input
+                            className="fileInput"
                             type={ "file" }
                             id={ "csvFileInput" }
                             accept={ ".csv" }
                             onChange={ handleOnChange } 
-                        />
+                        /> */}
+                        <label className="custom-file-upload">
+                            <input
+                                type={ 'file' }
+                                id={ "csvFileInput" }
+                                accept={ ".csv" }
+                                onChange={ handleOnChange }
+                            />
+                            {file ? file.name : 'Upload Your CSV Here'}
+                        </label>
                     </div>
 
-                    <button onClick={ (e) => { handleOnSubmit(e) } }>IMPORT CSV</button>
+                    <button disabled={!file} style={ { marginLeft: '1%' }} onClick={ (e) => { handleOnSubmit(e) } }>IMPORT CSV</button>
                 </form>
             }
         </>

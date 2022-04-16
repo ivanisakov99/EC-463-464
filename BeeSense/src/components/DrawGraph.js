@@ -27,7 +27,7 @@ const DrawGraph = (props) => {
                     pointHoverBackgroundColor: 'rgba(75,192,192,1)',
                     pointHoverBorderColor: 'rgba(220,220,220,1)',
                     pointHoverBorderWidth: 2,
-                    pointRadius: 1,
+                    pointRadius: 5,
                     pointHitRadius: 10,
                     data: props.dataset[props.name],
                 }
@@ -40,7 +40,9 @@ const DrawGraph = (props) => {
     return (
         <>
             { Data && props.name ? 
-                    <Line data={ Data } />
+                <div className="chart-container" style={ { position: 'relative', height: '75%', width: '75%', marginLeft: '10%' }}>
+                    <Line data={Data} />
+                </div>   
             : null
             }
         </>
