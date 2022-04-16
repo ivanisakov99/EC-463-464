@@ -3,23 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App /> {/* The various pages will be displayed by the `Main` component. */ }
+  </BrowserRouter>,
   document.getElementById('root')
 );
-
-// // You can choose your kind of history here (e.g. browserHistory)
-// import { Router, hashHistory as history } from 'react-router';
-// // Your routes.js file
-// import routes from './routes';
-
-// ReactDOM.render(
-//   <Router routes={ routes } history={ history } />,
-//   document.getElementById('your-app')
-// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

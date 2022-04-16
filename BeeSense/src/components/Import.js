@@ -1,74 +1,8 @@
 import React, { useState, useEffect } from "react";
 // import {Line} from 'react-chartjs-2';
-import { Chart as ChartJS, registerables } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+// import { Chart as ChartJS, registerables } from 'chart.js';
+// import { Line } from 'react-chartjs-2';
 import DrawGraph from "./DrawGraph";
-// ChartJS.register(...registerables);
-
-// class Import extends React.Component {
-//     constructor (props) {
-//         super(props);
-//         this.state = {
-//             file: {},
-//             array: [],
-//         };
-//     }
-
-//     fileReader = new FileReader();
-
-//     handleOnChange = (e) => {
-//         // TODO
-//         this.setState({
-//             file: e.target.files[0]
-//         });
-//     }
-
-//     csvFileToArray = (file) => {
-//         const csvHeader = file.slice(0, file.indexOf('\n')).split(',');
-//         const csvRows = file.slice(file.indexOf('\n') + 1).split('\n');
-
-//         const newArray = csvRows.map(i => {
-//             const values = i.split(',');
-//             const obj = csvHeader.reduce((object, header, index) => {
-//                 object[header] = values[index];
-//                 return object;
-//             }, {});
-//             return obj;
-//         });
-
-//         this.setState({
-//             array: newArray
-//         })
-//     }
-
-//     handleOnSubmit = (e) => {
-//         e.preventDefault()
-
-//         console.log(this.file)
-
-//         // this.fileReader.onload = (event) => {
-//         //     const text = event.target.result;
-//         //     this.csvFileToArray(text);
-//         // }
-//         // // console.log(this.state.array)
-//         // this.fileReader.readAsText(this.file);
-//     }
-
-//     render () {
-//         return (
-//             <>
-//                 <h3>Welcome! Import your csv</h3>
-//                 <form>
-//                     <div>
-//                         <input type={"file"} id={"csvFileInput"} accept={".csv"} onChange={this.handleOnChange} />
-//                     </div>
-//                     <button onClick={(e) => {this.handleOnSubmit(e)}}>Upload your csv here</button>
-//                 </form>
-//             </>
-//         );
-//     };
-// };
-
 
 const Import = () => {
     const [file, setFile] = useState();

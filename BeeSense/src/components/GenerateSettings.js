@@ -1,6 +1,5 @@
 import React from 'react';
 import Form from '../components/Form';
-import logo from '../assets/Bee.png';
 
 class GenerateSettings extends React.Component {
     constructor(props) {
@@ -19,10 +18,6 @@ class GenerateSettings extends React.Component {
     render () {
         return (
             <>
-                <div className='logo'>
-                <img src={ logo } alt='Bee' />
-                </div>
-
                 { !this.state.submitted ?
                     <Form handler={ this.handler } />
                 :
